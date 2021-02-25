@@ -17,10 +17,14 @@ title: Reseau Coworking Grand Lyon
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   DES ESPACES DE COWORKING , UN RÉSEAU
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/coworking-grandlyon" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+
+collections:
+  spaces:
+    output: true
 
 # Build settings
 markdown: kramdown
