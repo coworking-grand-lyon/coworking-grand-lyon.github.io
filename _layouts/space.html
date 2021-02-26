@@ -11,17 +11,20 @@
 <body>
 <section class="page-header">
   <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
-  <img src="/assets/images/logo.png">
+  <img src="{{ '/assets/images/logo.png' | relative_url}}">
   <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
 </section>
 
 <section class="main-content">
   <div>
-    <img class="small-image" src="/assets/images/{{ page.image }}">
+    <img class="small-image" src="{{ '/assets/images/' | append: page.image | relative_url}}">
   </div>
   <a href="{{ page.external_url }}"><h2>{{ page.name }}</h2></a>
   {{ content }}
 
+  <p>
+    <a href="{{'/' | relative_url}}">Retour</a>
+  </p>
   <footer class="site-footer">
     {% if site.github.is_project_page %}
     <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>

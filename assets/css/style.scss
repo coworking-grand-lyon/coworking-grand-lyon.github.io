@@ -6,3 +6,25 @@
 .small-image {
  height: 5rem;
 }
+
+.page-header {
+ padding-bottom: 0;
+}
+
+.main-content {
+ padding-top: 0;
+
+ img {
+  object-fit: contain;
+ }
+}
+
+.item-space {
+ display: flex;
+ align-items: center;
+
+ .space-image {
+  flex-grow: 1;
+  text-align: right;
+ }
+}

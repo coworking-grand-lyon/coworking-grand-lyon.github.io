@@ -11,21 +11,28 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
-      <img src="/assets/images/logo.png">
+      <img src="{{ '/assets/images/logo.png' | relative_url}}">
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
     </section>
 
     <section class="main-content">
       {{ content }}
 
+      <h2>Espaces de coworking</h2>
+      <p>
       <ul>
         {% for space in site.spaces %}
         <li>
-          <img class="small-image" src="/assets/images/{{ space.image }}">
-          <a href="spaces/{{ space.slug }}"><br>{{ space.name }}</a>
+          <div class="item-space">
+            <a href="{{ space.url | relative_url }}"> {{ space.name }}</a>
+            <div class="space-image">
+              <img class="small-image" src="{{ '/assets/images/' | append: space.image | relative_url}}">
+            </div>
+          </div>
         </li>
         {% endfor %}
       </ul>
+      </p>
 
       <footer class="site-footer">
         {% if site.github.is_project_page %}
